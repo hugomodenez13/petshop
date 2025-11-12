@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Pet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="index.html" class="header-link">🐾 Pet Shop Melhor Amigo</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="minha-conta.html">Minha Conta</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="cadastro-pet" class="form-section page-section">
+            <div class="container">
+                <h2>Cadastrar Novo Pet</h2>
+                
+                <form id="pet-form">
+                    <label for="pet-nome">Nome do Pet:</label>
+                    <input type="text" id="pet-nome" name="pet-nome" required>
+
+                    <label for="pet-especie">Espécie:</label>
+                    <select id="pet-especie" name="pet-especie" required>
+                        <option value="Cachorro">Cachorro</option>
+                        <option value="Gato">Gato</option>
+                        <option value="Passaro">Pássaro</option>
+                        <option value="Outro">Outro</option>
+                    </select>
+
+                    <label for="pet-raca">Raça: (Opcional)</label>
+                    <input type="text" id="pet-raca" name="pet-raca">
+
+                    <label for="pet-nascimento">Data de Nascimento: (Opcional)</label>
+                    <input type="date" id="pet-nascimento" name="pet-nascimento">
+
+                    <button type="submit" class="cta-button">Salvar Pet</button>
+                </form>
+                <div id="form-message"></div>
+
+                <div class="back-link">
+                    <a href="minha-conta.html">&larr; Voltar para Minha Conta</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contato">
+        <div class="container">
+            <p>© 2025 Pet Shop Melhor Amigo. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="global.js"></script>
+    <script src="cadastrar-pet.js"></script>
+</body>
+</html>

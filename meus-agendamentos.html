@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Agendamentos - Pet Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="index.html" class="header-link">🐾 Pet Shop Melhor Amigo</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li> 
+                    <li><a href="minha-conta.html">Minha Conta</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="container page-section">
+            <div class="welcome-header">
+                <h2>Meus Agendamentos</h2>
+                <p>Veja aqui seu histórico e próximos horários marcados.</p>
+            </div>
+            
+            <div class="table-container">
+                <table id="meus-agendamentos-table">
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Hora</th>
+                            <th>Pet</th>
+                            <th>Serviço</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-meus-agendamentos-corpo">
+                        <tr>
+                            <td colspan="4" class="loading-text">Carregando agendamentos...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="back-link">
+                <a href="agendar.html">Marcar um novo horário &rarr;</a>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contato">
+        <div class="container">
+            <p>© 2025 Pet Shop Melhor Amigo. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="global.js"></script>
+    <script src="meus-agendamentos.js"></script>
+
+</body>
+</html>

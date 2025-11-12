@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="auth-container">
+        
+        <div class="auth-brand-panel">
+            <div class="auth-brand-content">
+                <h1>🐾 Pet Shop Melhor Amigo</h1>
+                <p>O melhor cuidado para o seu melhor amigo.</p>
+            </div>
+        </div>
+
+        <div class="auth-form-panel">
+            <div class="auth-form-box">
+                <h2>Crie sua conta</h2>
+                <p>É rápido e fácil. Vamos começar!</p>
+                
+                <form id="register-form">
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" required>
+
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha" required>
+
+                    <button type="submit" class="cta-button">Cadastrar</button>
+                </form>
+                
+                <div id="form-message"></div>
+
+                <div class="auth-form-footer">
+                    <p>Já tem uma conta? <a href="login.html">Faça login aqui</a></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    <script src="global.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>

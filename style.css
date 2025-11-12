@@ -1,0 +1,795 @@
+/* Configurações Globais */
+:root {
+    --primary-color: #007bff;
+    /* Azul principal */
+    --secondary-color: #6c757d;
+    /* Cinza */
+    --bg-light: #f8f9fa;
+    /* Fundo claro */
+    --text-dark: #333;
+    --text-light: #fff;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    color: var(--text-dark);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+}
+
+/* Cabeçalho */
+header {
+    background: var(--text-light);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #ff0099;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    color: var(--primary-color);
+    margin: 0;
+    font-size: 1.5rem;
+    color: #000000;
+}
+
+header nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+header nav li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #070707;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: var(--primary-color);
+}
+
+/* Botão de Ação (CTA) */
+.cta-button {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 80px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    background-color: #06df97;
+}
+
+.cta-button:hover {
+    background-color: #ff0099;
+    transform: translateY(-2px);
+}
+
+/* ---- NOVO: Estilos do Hero Slider ---- */
+
+/* 1. O container principal do slider */
+.hero-slider {
+    position: relative;
+    /* Base para o conteúdo flutuante */
+    height: 70vh;
+    /* Altura do slider (ex: 70% da tela) */
+    min-height: 450px;
+    overflow: hidden;
+    /* Garante que nada vaze */
+    color: white;
+    /* Cor do texto padrão */
+}
+
+/* 2. O container dos slides (só para organização) */
+.hero-slide-container {
+    width: 100%;
+    height: 100%;
+}
+
+/* 3. O slide individual */
+.hero-slider .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+
+    /* A MÁGICA DA TRANSIÇÃO (Fade) */
+    opacity: 0;
+    /* Começa invisível */
+    transition: opacity 1.5s ease-in-out;
+}
+
+/* 4. O slide ativo (visível) */
+.hero-slider .slide.active {
+    opacity: 1;
+    /* Fica visível */
+    z-index: 1;
+}
+
+/* 5. O conteúdo (texto e botão) */
+.hero-slider .hero-content {
+    position: absolute;
+    /* Flutua por cima */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    /* Garante que fique na frente dos slides */
+
+    /* Layout para centralizar o texto */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    /* Overlay escuro para legibilidade do texto */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}
+
+.hero-slider .hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* 6. A navegação de "pontos" */
+.slider-nav {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    /* Fica na frente de tudo */
+    display: flex;
+    gap: 12px;
+}
+
+.nav-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.nav-dot:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.nav-dot.active {
+    background-color: white;
+}
+
+/* Seção de Serviços */
+#servicos {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 2rem;
+}
+
+.servico-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.servico-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.servico-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.servico-card h3 {
+    color: var(--primary-color);
+    padding: 1rem 0 0.5rem 0;
+}
+
+.servico-card p {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+/* Seção do Formulário */
+.form-section {
+    background-color: var(--bg-light);
+    padding: 4rem 0;
+}
+
+#agendamento h2,
+#cadastro-pet h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#booking-form,
+#pet-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#booking-form label,
+#pet-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+#booking-form input,
+#booking-form select,
+#pet-form input,
+#pet-form select {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    /* Garante que o padding não afete a largura */
+}
+
+#booking-form button,
+#pet-form button {
+    width: 100%;
+}
+
+/* Mensagem de Feedback */
+#form-message {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+/* Rodapé */
+footer {
+    background: #333;
+    color: var(--text-light);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+}
+
+/* Responsividade (Celular) */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+    }
+
+    header nav {
+        margin-top: 10px;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+}
+
+/* ---- Estilos para a Página de Agendamento ---- */
+/* (Esta seção estava no lugar errado) */
+
+/* Adiciona um padding maior quando a seção do formulário
+   está em sua própria página */
+.page-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+/* Estiliza o link de "Voltar" */
+.back-link {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.back-link a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.back-link a:hover {
+    color: var(--primary-color);
+}
+
+/* ---- Estilos Minha Conta ---- */
+/* (Esta seção também estava no lugar errado) */
+
+.account-box {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.account-box h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+#lista-pets ul {
+    list-style-type: '🐾';
+    padding-left: 1.5rem;
+}
+
+#lista-pets li {
+    padding-left: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+/* Link sem sublinhado no H1 */
+.header-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Ajuste no formulário de agendamento */
+#booking-form small {
+    display: block;
+    margin-top: -0.8rem;
+    margin-bottom: 1rem;
+    text-align: right;
+}
+
+/* ---- NOVO: Estilos do Painel do Cliente (minha-conta) ---- */
+
+.welcome-header {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+/* O container principal do dashboard */
+.dashboard-container {
+    display: grid;
+    /* Duas colunas: 2fr (mais larga) e 1fr (mais estreita) */
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    /* Espaço entre as colunas */
+}
+
+/* Coluna da esquerda (Lista de Pets) */
+.pets-list-panel {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.pets-list-panel h3 {
+    margin-top: 0;
+    border-bottom: 2px solid var(--bg-light);
+    padding-bottom: 0.5rem;
+}
+
+/* Coluna da direita (Ações Rápidas) */
+.actions-panel {
+    order: 1;
+    /* Mostra as ações primeiro */
+}
+
+.actions-panel h3 {
+    margin-top: 0;
+}
+
+/* Card de Ação (Links) */
+.action-card {
+    background: var(--text-light);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-dark);
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.action-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+    border-color: var(--primary-color);
+}
+
+.action-card .action-icon {
+    font-size: 2rem;
+    margin-right: 1rem;
+}
+
+.action-card .action-info strong {
+    display: block;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+.action-card .action-info small {
+    color: var(--secondary-color);
+}
+
+
+/* NOVO: Card de Pet (para a lista de pets) */
+.pet-card {
+    display: flex;
+    align-items: center;
+    background: var(--bg-light);
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.pet-card.empty {
+    text-align: center;
+    display: block;
+    color: var(--secondary-color);
+}
+
+.pet-card .pet-icon {
+    font-size: 2.5rem;
+    margin-right: 1rem;
+}
+
+.pet-card .pet-info {
+    line-height: 1.4;
+}
+
+.pet-card .pet-info strong {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    display: block;
+}
+
+.pet-card .pet-info small {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+/* 1. Corrige a regra #vamove para centralizar corretamente */
+#vamove {
+    position: static;
+    /* Reseta a posição 'relative' */
+    left: auto;
+    /* Reseta o 'left: 230px' */
+    text-align: center;
+    /* Centraliza da forma correta */
+}
+
+/* 2. Adiciona regras de responsividade que faltavam */
+@media (max-width: 768px) {
+
+    /* Centraliza o #vamove (garantia) */
+    #vamove {
+        text-align: center;
+    }
+
+    /* Diminui o padding dos formulários em telas pequenas, 
+      para não "espremer" o conteúdo.
+    */
+    .form-section #booking-form,
+    .form-section #pet-form {
+        padding: 1.5rem;
+        /* O original (2rem) era muito grande para celular */
+    }
+}
+
+/* ---- NOVO: Estilos de Autenticação (Login/Registro) ---- */
+
+/* Garante que o container ocupe a tela inteira */
+html,
+body {
+    height: 100%;
+}
+
+body {
+    /* Remove a margem padrão, pode afetar outros elementos
+       se já não estiver lá. Se o body já tem margin 0, ignore. */
+    margin: 0;
+}
+
+.auth-container {
+    display: grid;
+    /* Duas colunas de tamanho igual */
+    grid-template-columns: 1fr 1fr;
+    /* Altura mínima de 100% da tela */
+    min-height: 100vh;
+}
+
+/* 1. Painel da Esquerda (Imagem) */
+.auth-brand-panel {
+    background: linear-gradient(#ff0099, rgba(226, 31, 226, 0.7)),
+        url('imagens/logoo.jpg.png') no-repeat center center/cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+/* Substitua a URL acima por uma foto real (ex: do Unsplash)
+   Ex: background-image: url('url-da-sua-foto.jpg'); */
+
+.auth-brand-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    /* O h1 não será mais azul, pois está no painel de marca */
+    color: white;
+}
+
+/* 2. Painel da Direita (Formulário) */
+.auth-form-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: var(--bg-light);
+    /* Fundo cinza claro */
+}
+
+.auth-form-box {
+    width: 100%;
+    max-width: 450px;
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.auth-form-box h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.auth-form-box p {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--secondary-color);
+}
+
+/* Estilos dos formulários de auth */
+#login-form label,
+#register-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+#login-form input,
+#register-form input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    /* Garante que o padding não afete a largura */
+}
+
+#login-form button,
+#register-form button {
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+/* Link "Não tem conta?" */
+.auth-form-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--bg-light);
+}
+
+
+/* ---- Responsividade para Login/Registro ---- */
+@media (max-width: 768px) {
+
+    /* No celular, vira uma coluna só */
+    .auth-container {
+        grid-template-columns: 1fr;
+    }
+
+    /* Esconde o painel de imagem no celular para focar no form */
+    .auth-brand-panel {
+        display: none;
+    }
+
+    /* O painel do formulário agora ocupa a tela inteira */
+    .auth-form-panel {
+        /* Remove o fundo cinza e deixa o box branco tomar conta */
+        background-color: #fff;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    .auth-form-box {
+        /* Remove a sombra e bordas para parecer uma página normal */
+        box-shadow: none;
+        padding: 1rem;
+    }
+}
+
+/* ---- Estilos dos Botões de Navegação (Login/Registro) ---- */
+
+header nav .nav-button-login,
+header nav .nav-button-register {
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Botão de Login (borda azul) */
+header nav .nav-button-login {
+    color: #000000;
+    border: 0px solid var(--primary-color);
+    font-weight: bold;
+}
+
+header nav .nav-button-login:hover {
+    background-color: ff0099;
+    color: var(--primary-color);
+}
+
+/* Botão de Registro (preenchido) */
+header nav .nav-button-register {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: 2px solid var(--primary-color);
+    font-weight: bold;
+    margin-left: 10px;
+    /* Espaço entre os botões */
+}
+
+header nav .nav-button-register:hover {
+    background-color: #0056b3;
+    /* Azul mais escuro */
+    border-color: #0056b3;
+}
+
+/* Botão de Sair (quando logado) */
+#logout-button {
+    color: #000000;
+    font-weight: bold;
+}
+
+#logout-button:hover {
+    color: var(--primary-color);
+}
+
+/* ---- NOVO: Estilos da Tabela Admin ---- */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    /* Para rolagem em telas pequenas */
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+#admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    /* Tira espaço entre células */
+}
+
+#admin-table th,
+#admin-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--bg-light);
+}
+
+#admin-table th {
+    background-color: var(--bg-light);
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+#admin-table tbody tr:hover {
+    background-color: #fcfcfc;
+}
+
+/* Textos de status na tabela */
+.loading-text,
+.error-text {
+    text-align: center;
+    color: var(--secondary-color);
+    font-style: italic;
+    padding: 2rem;
+}
+
+.error-text {
+    color: #d9534f;
+}
+
+/* Novo Card de Admin em minha-conta.html */
+.admin-card {
+    border-color: #d9534f;
+    /* Destaque vermelho */
+}
+
+.admin-card .action-info strong {
+    color: #d9534f;
+}
+
+/* ---- Estilos das Tabelas (Admin e Cliente) ---- */
+
+/* Aplica a todas as células de AMBAS as tabelas */
+#admin-table th,
+#admin-table td,
+#meus-agendamentos-table th,
+#meus-agendamentos-table td {
+    padding: 12px 15px;
+    /* <-- Isso adiciona o "respiro" */
+    text-align: left;
+    border-bottom: 1px solid var(--bg-light);
+}
+
+/* Aplica a todos os cabeçalhos de AMBAS as tabelas */
+#admin-table th,
+#meus-agendamentos-table th {
+    background-color: var(--bg-light);
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+/* Aplica o efeito hover em AMBAS as tabelas */
+#admin-table tbody tr:hover,
+#meus-agendamentos-table tbody tr:hover {
+    background-color: #fcfcfc;
+}

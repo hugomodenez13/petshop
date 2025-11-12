@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="index.html" class="header-link">🐾 Pet Shop Melhor Amigo</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li> 
+                    <li><a href="minha-conta.html">Minha Conta</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="agendamento" class="form-section page-section">
+            <div class="container">
+                
+                <h2>Faça seu Agendamento</h2>
+                <p id="vamove">Selecione o pet e o serviço desejado.</p>
+
+                <form id="booking-form">
+                    <label for="owner-name">Nome do Tutor:</label>
+                    <input type="text" id="owner-name" name="owner-name" value="Dono (logado)" required>
+                    
+                    <label for="pet-select">Qual pet será atendido?</label>
+                    <select id="pet-select" name="pet-select" required>
+                        <option value="">Carregando pets...</option>
+                    </select>
+                    
+                    <small>Seu pet não está na lista? <a href="cadastrar-pet.html">Cadastre-o aqui</a></small>
+                    
+                    <label for="service">Tipo de Serviço:</label>
+                    <select id="service" name="service" required>
+                        <option value="">Selecione um serviço</option>
+                        <option value="consulta">Consulta Veterinária</option>
+                        <option value="banho">Banho</option>
+                        <option value="tosa">Tosa</option>
+                        <option value="banho_tosa">Banho e Tosa</option>
+                    </select>
+
+                    <label for="date">Data:</label>
+                    <input type="date" id="date" name="date" required>
+
+                    <label for="time">Horário Preferencial:</label>
+                    <input type="time" id="time" name="time" required>
+
+                    <label for="phone">Telefone (WhatsApp):</label>
+                    <input type="tel" id="phone" name="phone" placeholder="(XX) XXXXX-XXXX" required>
+
+                    <button type="submit" class="cta-button">Confirmar Agendamento</button>
+                </form>
+                <div id="form-message"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contato">
+        <div class="container">
+            <p>© 2025 Pet Shop Melhor Amigo. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="agendar.js"></script>
+    <script src="global.js"></script>
+    
+</body>
+</html>

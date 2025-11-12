@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Cliente </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="index.html" class="header-link">🐾 Pet Shop Melhor Amigo</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="container page-section">
+            <div class="welcome-header">
+                <h2>👋 Painel do Cliente</h2>
+                <p>Olá! Gerencie seus pets e agende seus horários aqui.</p>
+            </div>
+
+            <div class="dashboard-container">
+
+                <div class="pets-list-panel">
+                    <h3>Meus Pets Cadastrados</h3>
+                    <div id="lista-pets">
+                        </div>
+                </div>
+
+                <div class="actions-panel">
+                    <h3>Ações Rápidas</h3>
+
+                    <a href="cadastrar-pet.html" class="action-card">
+                        <span class="action-icon">➕</span>
+                        <div class="action-info">
+                            <strong>Cadastrar Novo Pet</strong>
+                            <small>Adicione um novo membro da família.</small>
+                        </div>
+                    </a>
+
+                    <a href="meus-agendamentos.html" class="action-card" id="meus-agendamentos-link">
+                        <span class="action-icon">🧾</span>
+                        <div class="action-info">
+                            <strong>Meus Agendamentos</strong>
+                            <small>Ver seu histórico de horários.</small>
+                        </div>
+                    </a>
+                    
+                    <a href="agendar.html" class="action-card">
+                        <span class="action-icon">📅</span>
+                        <div class="action-info">
+                            <strong>Agendar Horário</strong>
+                            <small>Marque um banho, tosa ou consulta.</small>
+                        </div>
+                    </a>
+
+                    <a href="admin.html" class="action-card admin-card" id="admin-panel-link">
+                        <span class="action-icon">📈</span>
+                        <div class="action-info">
+                            <strong>Painel de Agendamentos</strong>
+                            <small>Monitorar todos os horários marcados.</small>
+                        </div>
+                    </a>
+
+                </div> </div> </section>
+    </main>
+
+    <footer id="contato">
+        <div class="container">
+            <p>© 2025 Pet Shop Melhor Amigo. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="global.js"></script>
+    <script src="meus-pets.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Carrega os pets (função do meus-pets.js)
+            displayPets();
+
+            // 2. Lógica de visibilidade dos links
+            const isAdmin = localStorage.getItem('is_admin');
+            const adminLink = document.getElementById('admin-panel-link');
+            const clienteLink = document.getElementById('meus-agendamentos-link');
+
+            if (isAdmin === '1') {
+                // --- O usuário É ADMIN ---
+                if (adminLink) adminLink.style.display = 'flex';
+                if (clienteLink) clienteLink.style.display = 'none';
+
+            } else {
+                // --- O usuário É um CLIENTE normal ---
+                if (adminLink) adminLink.style.display = 'none';
+                if (clienteLink) clienteLink.style.display = 'flex';
+            }
+        });
+    </script>
+
+</body>
+</html>

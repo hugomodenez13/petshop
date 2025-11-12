@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="auth-container">
+        
+        <div class="auth-brand-panel">
+            <div class="auth-brand-content">
+                <h1>🐾 Pet Shop Melhor Amigo</h1>
+                <p>O melhor cuidado para o seu melhor amigo.</p>
+            </div>
+            </div>
+
+        <div class="auth-form-panel">
+            <div class="auth-form-box">
+                <h2>Acesse sua conta</h2>
+                <p>Bem-vindo de volta! Por favor, insira seus dados.</p>
+                
+                <form id="login-form">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha" required>
+
+                    <button type="submit" class="cta-button">Entrar</button>
+                </form>
+                
+                <div id="form-message"></div>
+
+                <div class="auth-form-footer">
+                    <p>Não tem uma conta? <a href="registrar.html">Cadastre-se aqui</a></p>
+                </div>
+            </div>
+        </div>
+
+    </div><script src="global.js"></script> <script src="auth.js"></script>
+</body>
+</html>
